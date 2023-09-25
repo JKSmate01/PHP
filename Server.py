@@ -35,4 +35,8 @@ def search(gepek_szama):
             open_cds()
         elif event.event_type == keyboard.KEY_DOWN and event.name == 'h':
             show_addresses()
+        elif event.event_type == keyboard.KEY_DOWN and event.name == 's':
+            for client in clients:
+                client.send(b"S")
+            break
 search(gepek_szama)
