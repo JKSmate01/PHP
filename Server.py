@@ -1,5 +1,6 @@
 import socket
 import keyboard
+import threading
 
 HOST = "192.168.100.4"
 PORT = 65433
@@ -8,7 +9,6 @@ s.bind((HOST, PORT))
 s.listen()
 clients = []
 addresses = []
-gepek_szama = int(input("PC num: "))
 def open_cds():
     for client in clients:
         client.send(b"Q")
@@ -21,13 +21,7 @@ def open_cds():
 def show_addresses():
     for address in addresses:
         print(address)
-def search(gepek_szama):
-    while len(clients) < gepek_szama:
-        conn, addr = s.accept()
-        print(f"{addr} is Online!")
-        conn.send('connected'.encode('utf-8'))
-        clients.append(conn)
-        addresses.append(addr)
+def commands():
     while True:
         event = keyboard.read_event()
         if event.event_type == keyboard.KEY_DOWN and event.name == 'q':
@@ -39,4 +33,14 @@ def search(gepek_szama):
             for client in clients:
                 client.send(b"S")
             break
-search(gepek_szama)
+def search():
+    while True:
+        conn, addr = s.accept()
+        print(f"{addr} is Online!")
+        conn.send('connected'.encode('utf-8'))
+        clients.append(conn)
+        addresses.append(addr)
+t1 = threading.Thread(target=search)
+t2 = threading.Thread(target=commands)
+t1.start()
+t2.start()

