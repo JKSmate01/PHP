@@ -1,0 +1,14 @@
+SW10
+VM3
+u:S10
+
+S1# show sdm prefer 
+Use the following commands to assign the dual-ipv4-and-ipv6 template as the default SDM template. 
+
+S1# configure terminal 
+S1(config)# sdm prefer dual-ipv4-and-ipv6 default 
+S1(config)# end 
+S1# reload 
+
+//save (no)
+
