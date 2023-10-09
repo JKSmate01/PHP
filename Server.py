@@ -2,7 +2,7 @@ import socket
 import keyboard
 import threading
 
-HOST = "192.168.100.4"
+HOST = "10.1.12.4"
 PORT = 65433
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((HOST, PORT))
