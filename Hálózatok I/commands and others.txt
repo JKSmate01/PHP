@@ -2,6 +2,10 @@ SW10
 VM3
 u:S10
 
+// Set pc ip
+//	netsh interface ip set address "LAN" static <ip> <netmask>
+//	RESET: netsh interface ip set address "LAN" dhcp
+
 S1# show sdm prefer 
 Use the following commands to assign the dual-ipv4-and-ipv6 template as the default SDM template. 
 
@@ -12,3 +16,28 @@ S1# reload
 
 //save (no)
 
+S1# show running-config 
+S1# show startup-config 
+
+S1# show interface vlan1
+
+
+Switch# show interface f0/6 
+
+show vlan
+
+Switch# show flash: Switch#
+dir flash: 
+
+//Hiba/elgépelés esetén leállás megelőzése:
+no ip domain-lookup 
+
+ipv6 address fe80::2 link-local
+
+int range fa0/1-24
+
+switchport access vlan 99
+
+int range g0/1-2
+
+switchport access vlan 99
