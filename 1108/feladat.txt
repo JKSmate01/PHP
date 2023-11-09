@@ -1,0 +1,4 @@
+A mellékelt asszociatív tömb alapján generáljon a php program egy legördülő listát, ami tartalmazza a városokat.
+Ha rákattintok az elküld gombra, akkor jelenjen meg a kiválasztott város lakossága.
+
+2023-10-18 anyagot kell tanulmányozni ha kell segítség.

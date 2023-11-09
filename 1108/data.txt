@@ -1,0 +1,26 @@
+$data = array (
+
+'Budapest' => 1729040,
+'Debrecen' => 211340,
+'Szeged' => 168048,
+'Miskolc' => 167754,
+'Pécs' => 156049,
+'Győr' => 129527,
+'Nyíregyháza' => 119746,
+'Kecskemét' => 111411,
+'Székesfehérvár' => 100570,
+'Szombathely' => 78884,
+'Érd' => 63662,
+'Szolnok' => 72953,
+'Tatabánya' => 67753,
+'Sopron' => 60548,
+'Kaposvár' => 66245,
+'Veszprém' => 61721,
+'Zalaegerszeg' => 59499,
+'Békéscsaba' => 62050,
+'Eger' => 56569,
+'Dunakeszi' => 40545,
+
+
+
+)
