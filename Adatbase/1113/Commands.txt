@@ -1,0 +1,26 @@
+CREATE DATABASE dolgozo
+DEFAULT CHARACTER SET utf8
+COLLATE utf8_hungarian_ci;
+USE dolgozo;
+CREATE TABLE dolgozo (
+	dolgozo_torzsszama varchar(10) PRIMARY KEY NOT NULL,
+	dolgozo_neve varchar(20) NOT NULL,
+	dolgozo_szulhely varchar(20) NOT NULL,
+	dolgozo_szulido date NOT NULL,
+	dolgozo_fizetes int(10) NOT NULL
+);
+
+//Adatok hozzáadása
+INSERT INTO dolgozo VALUES ('T000100001','Teszt Jóska','Teszthely','2023.11.13',1234567890),
+('T000100002','Teszt Ferenc','Teszthely','2023.11.0',1234567890);
+
+//"Teszt Ferenc" törlése
+DELETE FROM dolgozo WHERE dolgozo.dolgozo_neve = "Teszt Jóska"
+DELETE FROM dolgozo WHERE dolgozo.dolgozo_neve = "Teszt Ferenc";
+
+//Több adat
+INSERT INTO dolgozo VALUES ('T234578','Kiss István','Eger','1968.12.11',120000),
+('T429877','Kovács János','Szeged','1967.05.12',120000),
+('T456734','Nagy József','Budapest','1972.01.30',150000),
+('T768545','Várdi Ödön','Budapest','1958.07.12',210000),
+('T429878','Kováts János','Szeged','1967.05.12',120000);
