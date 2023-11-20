@@ -1,0 +1,135 @@
+
+         --- System Configuration Dialog ---
+
+Would you like to enter the initial configuration dialog? [yes/no]:
+% Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [yes/no]:
+% Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [yes/no]:
+% Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [yes/no]: no
+Switch>ena
+Switch#conf
+Switch#configure t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#host
+Switch(config)#hostname A
+% Hostname must have more than 1 character and must not exceed the maximum 63 character leng
+
+Switch(config)#hostname "A"
+% Hostname must have more than 1 character and must not exceed the maximum 63 character leng
+
+Switch(config)#hostname A
+% Hostname must have more than 1 character and must not exceed the maximum 63 character leng
+
+Switch(config)#hostname SWA
+SWA(config)#hostname A
+% Hostname must have more than 1 character and must not exceed the maximum 63 character leng
+
+SWA(config)#hostname AAA
+AAA(config)#hostname AA
+AA(config)#hostname A
+% Hostname must have more than 1 character and must not exceed the maximum 63 character leng
+
+AA(config)#hostname SW-A
+SW-A(config)#hostname A
+% Hostname must have more than 1 character and must not exceed th                           e maximum 63 character length.
+
+SW-A(config)#end
+SW-A#
+*Mar  1 00:41:28.857: %SYS-5-CONFIG_I: Configured from console by                            console
+SW-A#show vlan b
+SW-A#show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -----------------                           --------------
+1    default                          active    Fa0/1, Fa0/2, Fa0                           /3, Fa0/4
+                                                Fa0/5, Fa0/6, Fa0                           /7, Fa0/8
+                                                Fa0/9, Fa0/10, Fa                           0/11, Fa0/12
+                                                Fa0/13, Fa0/14, F                           a0/15, Fa0/16
+                                                Fa0/17, Fa0/18, F                           a0/19, Fa0/20
+                                                Fa0/21, Fa0/22, F                           a0/23, Fa0/24
+                                                Gi0/1, Gi0/2
+99   VLAN0099                         active
+1002 fddi-default                     act/unsup
+1003 token-ring-default               act/unsup
+1004 fddinet-default                  act/unsup
+1005 trnet-default                    act/unsup
+SW-A#
+SW-A#show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                Fa0/5, Fa0/6, Fa0/7, Fa0/8
+                                                Fa0/9, Fa0/10, Fa0/11, Fa0/12
+                                                Fa0/13, Fa0/14, Fa0/15, Fa0/16
+                                                Fa0/17, Fa0/18, Fa0/19, Fa0/20
+                                                Fa0/21, Fa0/22, Fa0/23, Fa0/24
+                                                Gi0/1, Gi0/2
+99   VLAN0099                         active
+1002 fddi-default                     act/unsup
+1003 token-ring-default               act/unsup
+1004 fddinet-default                  act/unsup
+1005 trnet-default                    act/unsup
+SW-A#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+SW-A(config)#vlan 10
+SW-A(config-vlan)#name piros
+SW-A(config-vlan)#vlan 20
+SW-A(config-vlan)#ame kek
+                   ^
+% Invalid input detected at '^' marker.
+
+SW-A(config-vlan)#name kek
+SW-A(config-vlan)#exit
+SW-A(config)#show vlan brief
+               ^
+% Invalid input detected at '^' marker.
+
+SW-A(config)#int fa0/10
+SW-A(config-if)#swit
+SW-A(config-if)#switchport mode acc
+SW-A(config-if)#switchport mode access
+SW-A(config-if)#switchport acc
+SW-A(config-if)#switchport access vlan 10
+SW-A(config-if)#int fa0/20
+SW-A(config-if)#switchport mode access
+SW-A(config-if)#switchport access vlan 20
+SW-A(config-if)#exit
+SW-A(config)#exit
+SW-A#sh
+*Mar  1 00:53:48.137: %SYS-5-CONFIG_I: Configured from console by consol
+% Type "show ?" for a list of subcommands
+SW-A#show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                Fa0/5, Fa0/6, Fa0/7, Fa0/8
+                                                Fa0/9, Fa0/11, Fa0/12, Fa0/13
+                                                Fa0/14, Fa0/15, Fa0/16, Fa0/17
+                                                Fa0/18, Fa0/19, Fa0/21, Fa0/22
+                                                Fa0/23, Fa0/24, Gi0/1, Gi0/2
+10   piros                            active    Fa0/10
+20   kek                              active    Fa0/20
+99   VLAN0099                         active
+1002 fddi-default                     act/unsup
+1003 token-ring-default               act/unsup
+1004 fddinet-default                  act/unsup
+1005 trnet-default                    act/unsup
+SW-A#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+SW-A(config)#int g 0/1
+SW-A(config-if)#swi
+SW-A(config-if)#switchport m
+SW-A(config-if)#switchport mode tr
+SW-A(config-if)#switchport mode trunk
+*Mar  1 00:57:09.564: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to down
+*Mar  1 00:57:09.564: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to down
+SW-A(config-if)#
+*Mar  1 00:57:12.593: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+SW-A(config-if)#exit
+SW-A(config)#
+*Mar  1 00:57:42.607: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to up
+SW-A(config)#
