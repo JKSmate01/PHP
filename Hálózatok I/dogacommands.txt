@@ -1,0 +1,16 @@
+Vlan setup:
+
+#show vlan brief
+
+(config)#vlan [vlan_num]
+(config-vlan)#name [vlan_name]
+(config)#int [port]
+(config-if)#switchport mode access
+(config-if)#switchport access vlan [vlan_num]
+(config-if)#end
+
+Két Switch közötti kapcsolat (Trunk hálózat) setup:
+
+(config)#int [port]
+(config-if)#switchport mode trunk
+(config-if)#end
