@@ -14,3 +14,8 @@ Két Switch közötti kapcsolat (Trunk hálózat) setup:
 (config)#int [port]
 (config-if)#switchport mode trunk
 (config-if)#end
+
+VOICE VLAN setup:
+(config)# interface [port]
+(config-if)# mls qos trust cos
+(config-if)# switchport voice vlan [vlan_num]
