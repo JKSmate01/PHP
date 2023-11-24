@@ -1,8 +1,9 @@
 import socket
 import keyboard
 import threading
-
-HOST = "10.1.12.4"
+hostname = socket.gethostname()
+ip_address = socket.gethostbyname(hostname)
+HOST = ip_address
 PORT = 65433
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((HOST, PORT))
