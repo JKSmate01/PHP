@@ -1,0 +1,14 @@
+SELECT COUNT(dolgozo_torzsszama) as "Dolgozók száma" FROM `dolgozo`
+SELECT COUNT(dolgozo_torzsszama) as "Dolgozók száma", SUM(dolgozo_fizetes) as "A dolgozók összes fizetése", AVG(dolgozo_fizetes) as "A dolgozók átlagos fizetése" FROM `dolgozo`
+SELECT dolgozo_neve, LEFT(dolgozo_szulido,4) as "Szulidő" FROM `dolgozo`
+SELECT dolgozo_neve, dolgozo_fizetes FROM `dolgozo` WHERE dolgozo_fizetes >= 150000
+SELECT dolgozo_neve, dolgozo_fizetes FROM `dolgozo` WHERE dolgozo_fizetes >= 100000 and dolgozo_szulido > 1960-01-01
+SELECT dolgozo_neve, dolgozo_fizetes FROM `dolgozo` WHERE dolgozo_fizetes >= 100000 and dolgozo_fizetes <= 120000
+SELECT dolgozo_neve, dolgozo_fizetes FROM `dolgozo` WHERE dolgozo_fizetes BETWEEN 100000 and 120000
+SELECT dolgozo_neve, dolgozo_fizetes FROM `dolgozo` WHERE dolgozo_fizetes IN (100000,150000)
+SELECT dolgozo_neve, dolgozo_fizetes FROM `dolgozo` WHERE dolgozo_fizetes NOT IN (100000,150000)
+SELECT dolgozo_neve, dolgozo_szulido, dolgozo_szulhely FROM `dolgozo` WHERE dolgozo_szulhely IN ("Eger", "Szeged", "Debrecen")
+SELECT * FROM `dolgozo` WHERE dolgozo_neve LIKE "%Kovács%"
+SELECT * FROM `dolgozo` WHERE dolgozo_neve LIKE "%K__s%"
+
+SELECT * FROM `dolgozo` WHERE ((LEFT (dolgozo_torzsszama),2) LIKE "T4") AND (dolgozo_szulhely NOT IN ("Szeged","Debrecen"))) OR ((LEFT(dolgozo_torzsszama, 2) LIKE "T2") AND (YEAR(dolgozo_szulido) = 1968))

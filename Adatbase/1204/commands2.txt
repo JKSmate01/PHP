@@ -1,0 +1,7 @@
+SELECT dolgozo_szulhely as "Születési hely", COUNT(dolgozo_torzsszama) AS "A dolgozók száma" FROM dolgozo GROUP BY dolgozo_szulhely
+SELECT dolgozo_szulhely as "Születési hely", SUM(dolgozo_fizetes) As "Össz fizetés" , AVG(dolgozo_fizetes) AS "A dolgozók átlag fizetése" FROM dolgozo GROUP BY dolgozo_szulhely
+SELECT dolgozo_szulhely, AVG(dolgozo_fizetes) FROM dolgozo GROUP BY dolgozo_szulhely HAVING AVG (dolgozo_fizetes) <= 120000
+SELECT dolgozo_neve, dolgozo_fizetes FROM dolgozo ORDER BY dolgozo_neve
+SELECT dolgozo_neve, dolgozo_fizetes FROM dolgozo ORDER BY dolgozo_neve DESC
+SELECT dolgozo_neve, dolgozo_fizetes FROM dolgozo ORDER BY dolgozo_fizetes DESC, dolgozo_neve
+SELECT DISTINCT dolgozo_fizetes FROM dolgozo
