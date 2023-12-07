@@ -1,0 +1,54 @@
+1:
+	MLS:
+		int g0/2
+		no switchport
+		ip address 209.165.200.225 255.255.255.252
+2.1:
+	MLS:
+		vlan 10
+		name Staff
+		vlan 20
+		name Student
+		vlan 30
+		name Faculty
+2.2:
+	MLS:
+		int vlan 10
+		ip address 192.168.10.254 255.255.255.0
+		int vlan 20
+		ip address 192.168.20.254 255.255.255.0
+		int vlan 30
+		ip address 192.168.30.254 255.255.255.0
+		int vlan 99
+		ip address 192.168.99.254 255.255.255.0
+2.3:
+	MLS:
+		int g0/1
+		switchport mode trunk 
+		switchport trunk native vlan 99
+		switchport trunk encapsulation dot1q 
+2.4:
+	S1:
+		int g0/1
+		switchport mode trunk
+		switchport trunk native vlan 99
+2.5:
+	MLS:
+		end
+		conf t
+		ip routing
+		end
+		show ip route
+3:
+	MLS:
+		end
+		conf t
+		ipv6 unicast-routing
+		interface vlan 10
+		ipv6 address 2001:db8:acad:10::1/64
+		int vlan 20
+		ipv6 address 2001:db8:acad:20::1/64
+		int vlan 30
+		ipv6 address 2001:db8:acad:30::1/64
+		int g0/2
+		ipv6 address 2001:db8:acad:a::1/64
