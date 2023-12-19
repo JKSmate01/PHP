@@ -17,10 +17,10 @@ def draw_frame():
     canvas.fill((0, 0, 0))
     for o in objs:
         if (objs.index(o)==selected):
-            o.c = o.color
+            o.c = selected_color
             o.create_rect(canvas,statics)
         else:
-            o.c = selected_color
+            o.c = o.color
             o.create_rect(canvas,statics)
         #show_debug_points(o,3)
     for s in statics:
@@ -29,7 +29,7 @@ def draw_frame():
 
 def Call_physics():
     for o in objs:
-        o.center[1] = phys.PhysicsUpdate(o.center,o.points)
+        o.center[1] = phys.PhysicsUpdate(o.center,o.collision_points,objs,statics,o.rot)
 #Debug values
 grabbed = False
 selected = 0
@@ -65,7 +65,8 @@ while True:
     #print(pygame.mouse.get_pos())
     if (grabbed):
         #objs[selected].rect.x, objs[selected].rect.y = pygame.mouse.get_pos()
-        objs[0].center[0], objs[0].center[1] = pygame.mouse.get_pos()
+        objs[selected].center[0], objs[selected].center[1] = pygame.mouse.get_pos()
+        objs[selected].rot += 1 * 0.05
     else:
         Call_physics()
         pass
