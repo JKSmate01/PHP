@@ -28,7 +28,7 @@ class PolyCuboid:
         #c4 = [self.center[0] - math.floor(math.sqrt(2*(self.a/2)**2)), self.center[1] + math.floor(math.sqrt(2*(self.a/2)**2))]
         r = math.floor(self.a/math.sqrt(math.pi)) *1.79
         #r2 = math.floor(math.sqrt(2*(self.a/2)**2))
-        #pygame.draw.circle(screen,(0,255,120,120),[self.center[0],self.center[1]],r)
+        pygame.draw.circle(screen,(0,255,120,120),[self.center[0],self.center[1]],r)
         points = []
         rot = 0
         for i in range(4):
