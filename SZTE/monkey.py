@@ -47,9 +47,9 @@ while True:
             if event.key == pygame.K_s and spawning:
                 d_objects.append(Create_object(10,True,pygame.mouse.get_pos(),spawning_size[0],spawning_size[1]))
             if event.key == pygame.K_a and spawning:
-                spawning_size = (spawning_size[0]-1, spawning_size[1]-1)
+                spawning_size = (spawning_size[0]-10, spawning_size[1]-10)
             if event.key == pygame.K_d and spawning:
-                spawning_size = (spawning_size[0]+1, spawning_size[1]+1)
+                spawning_size = (spawning_size[0]+10, spawning_size[1]+10)
     canvas.fill((255,255,255))
     space.debug_draw(options)
     space.step(1/125)
