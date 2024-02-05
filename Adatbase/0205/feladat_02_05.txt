@@ -1,0 +1,25 @@
+147. Hozza létre az alábbi szerkezetű, DOLGOZOK nevű táblát: 
+
+KOD VARCHAR2(4) NOT NULL 
+
+NEV VARCHAR2(30) NOT NULL 
+
+FIZETES NUMBER 
+
+SZUL DAT DATE 
+
+ 
+
+148. Bővítse a DOLGOZOK táblát a CIM oszloppal, melynek típusa VARCHAR2(30)! A NEV hosszát módosítsa 40-re! 
+
+ 
+
+149. Hozza létre az UJ_RESZL1 nevű táblát, melynek szerkezete azonos a RESZLEG nevű tábla szerkezetével! 
+
+ 
+
+150. Hozza létre az UJ_RESZL2 nevű táblát, melynek szerkezete és tartalma azonos a RESZLEG nevű tábla szerkezetével és tartalmával! 
+
+ 
+
+151. Nevezze át az UJ_RESZL2 táblát RESZLEG2 névre! 
