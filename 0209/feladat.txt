@@ -1,0 +1,13 @@
+Kérjük be űrlapon a súlyt (kg) és magasságot (m) majd
+határozzuk meg a testtömeg indext számszerűen és szövegesen is.
+
+tti = súly / (magasság négyzet)
+
+0 súlyos soványság
+16 mérsékelt soványság
+17 enyhe soványság
+18,5 normális testsúly
+25 túlsúlyos
+30 I. fokú elhízás
+35 II. fokú elhízás
+40 III. fokú (súlyos) elhízás

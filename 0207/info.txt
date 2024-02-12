@@ -1,0 +1,28 @@
+
+dokumentumgyökér meghatározása:
+
+$root_dir = $_SERVER['DOCUMENT_ROOT'];
+echo "Szerver dokumentumgyökér: " . $root_dir;
+
+
+
+
+mappában levő fájlok kiolvasása
+
+$files = glob('/elérési/útvonal/a/könyvtárhoz/*.*'); 
+foreach ($files as $file) {
+    echo $file . '<br>';
+}
+
+file nevének kiszedése (eltávolítja az elérési utat):
+basename("elérési/út/file.kit")
+
+
+Az images mappában levő összes képet jelenítsük meg, relatív útvonallal megadva az src-t
+
+<img src="./images/xy">
+
+
+A glob parancsnak viszont abszolút utat kell megadni:
+pl.
+c:/xampp/htdocs/xy/xy/*.*
