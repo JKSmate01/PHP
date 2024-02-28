@@ -1,0 +1,15 @@
+<?php
+
+    //dinamikus php változó használata
+    for($i=1; $i < 10; $i++){
+        ${'kalap'.$i} = $i; //létrehozzuk a kalap1, kalap2 ... kalap9 változókat.
+    }
+
+    //ellenőrizzük, hogy léteznek-e
+    echo $kalap1."<br>";
+    echo $kalap2."<br>";
+    echo $kalap9."<br>";
+
+
+
+?>

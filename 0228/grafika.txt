@@ -1,0 +1,29 @@
+<?php
+// Kép létrehozása
+$width = 600;
+$height = 600;
+$image = imagecreatetruecolor($width, $height);
+
+// Szín létrehozása
+$red = imagecolorallocate($image, 255, 0, 0); // Piros szín
+
+
+// Szakasz rajzolása (kép,bfx,bfx,jax,jay) (bf:bal felső, ja: jobb alsó)(a bf sarok az origó (0,0))
+
+imageline($image,0,0,399,99, $red);
+
+/*
+
+	kitöltött ellipszis: imagefilledellipse($image,középx,középy,szélesség,magasság,szín)
+	kitöltött téglalap: imagefilledrectangle($image,x1,y1,x2,y2,szín)
+*/
+
+
+
+// Kép kimenetele
+header('Content-type: image/png');
+imagepng($image);
+
+// Kép felszabadítása
+imagedestroy($image);
+?>

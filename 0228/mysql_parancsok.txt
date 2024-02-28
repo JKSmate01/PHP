@@ -1,0 +1,8 @@
+$con = mysqli_connect('localhost','root','','grafika');
+mysqli_select_db($con,'elemek');
+$lek = mysqli_query($con,"select r,g,b,colorname from elemek where type='color'");
+while($row = mysqli_fetch_array($lek))
+{
+        //$row['colorname'] vagy $row['r']
+        
+}
