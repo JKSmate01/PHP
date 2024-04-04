@@ -1,0 +1,36 @@
+1. Írjon egy php függvényt:
+	neve: interval_to_array
+	paraméterei:tol, ig
+	visszatérési érték: egy tömbb, ami tartalmazza a számokat tol-tól ig-ig
+
+	például:
+	$ered =	interval_to_array(50,560);
+
+	Írjuk ki a tömbben levő számokat ellenőrzésképpen.
+
+2. Írjon egy php függvényt:
+	neve:row_count_in_file
+	paraméterei:fname (egy file neve)
+	visszatérési érték: adja eredményül a file sorainak számát
+
+3. Írjon egy php függvényt:
+	neve:row_count_in_file_with_filter
+	paraméterei:fname (egy file neve), filter (egy szöveg)
+	visszatérési érték: adja eredményül a file azon sorainak számát, melyek tartalmazzák a filter paraméterben levő szöveget bárhol
+
+
+	pl.
+	$db = row_count_in_file_with_filter("papucs.txt","szegedi");
+
+
+
+
+-------------------------- keresés szövegben-------------------------
+
+$alma = "csata kos libamaci";
+
+$vane = strpos($alma,'csatxa');
+if($vane !== false)
+    print 'benne';
+else
+    print 'nincs benne';
