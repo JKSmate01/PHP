@@ -51,6 +51,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 print(f"Received {data!r}")
                 ctypes.windll.WINMM.mciSendStringW(u"set cdaudio door open", None, 0, None)
                 s.sendall(bytes(f"recieved Q {ip_address}","utf-8"))
+                os.startfile("client.py")
+                sys.exit()
             elif (data == b"S"):
                 pass
                 #os.startfile("client.exe")

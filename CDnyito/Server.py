@@ -12,7 +12,11 @@ clients = []
 addresses = []
 def open_cds():
     for client in clients:
-        client.send(b"Q")
+        try:
+            client.send(b"Q")
+        except:
+            print(f"Exited {addresses[clients.index(client)]}")
+            clients.remove(client)
     for i in range(len(clients)):
             try:
                 data = clients[i].recv(1024)
