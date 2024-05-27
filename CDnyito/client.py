@@ -9,6 +9,7 @@ HOST = f"{t_id[0]}.{t_id[1]}.{t_id[2]}."
 C_HOST_try = 0
 PORT = 65433
 data = ""
+app_name = "client"
 while True:
         okay = False
         num = 0
@@ -51,13 +52,13 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 print(f"Received {data!r}")
                 ctypes.windll.WINMM.mciSendStringW(u"set cdaudio door open", None, 0, None)
                 s.sendall(bytes(f"recieved Q {ip_address}","utf-8"))
-                os.startfile("client.py")
+                os.startfile(f"{app_name}.exe")
                 sys.exit()
             elif (data == b"S"):
                 pass
                 #os.startfile("client.exe")
                 #sys.exit()
         except:
-            os.startfile("client.exe")
+            #os.startfile("client.exe")
             sys.exit()
     
